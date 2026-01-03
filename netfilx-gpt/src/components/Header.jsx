@@ -1,12 +1,42 @@
-import React from "react";
+import { signOut } from "firebase/auth";
+import { auth } from "../utils/firebase";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { LOGO, PHOTO_URL } from "../utils/constants";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const user = useSelector((store) => store.user);
+
+  const handleSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => {
+        navigate("/error");
+      });
+  };
   return (
-    <div className="absolute w-44 ml-16 mt-5 z-10">
+    <div className="flex justify-between absolute w-screen px-8 py-2 z-10 bg-linear-to-b from-black">
       <img
-        src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2025-12-03/consent/87b6a5c0-0104-4e96-a291-092c11350111/019ae4b5-d8fb-7693-90ba-7a61d24a8837/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
+        src={LOGO}
         alt="logo"
+        className="w-44 cursor-pointer"
       />
+
+      {user && (
+        <div className="flex p-2 items-center gap-2">
+          <h5 className="font-bold text-white">{user?.displayName}</h5>
+          <img className="w-10 h-10 rounded-lg" src={PHOTO_URL} alt="" />
+          <button
+            className="font-bold text-white cursor-pointer"
+            onClick={handleSignOut}
+          >
+            Sign Out
+          </button>
+        </div>
+      )}
     </div>
   );
 };
