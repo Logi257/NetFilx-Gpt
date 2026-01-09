@@ -13,6 +13,9 @@ export const API_OPTIONS = {
   },
 };
 
+export const BG_URL =
+  "https://assets.nflxext.com/ffe/siteui/vlv3/c81956f1-5750-454c-9b3c-7a4d990d3d06/web/IN-en-20251208-TRIFECTA-perspective_d69f5f82-9a35-45d7-a7b6-9af6e0643bf5_small.jpg";
+
 export const NOW_PLAYING_API =
   "https://api.themoviedb.org/3/movie/now_playing?&page=1";
 
@@ -25,3 +28,18 @@ export const UPCOMING_MOVIES_API =
 export const POPULAR_MOVIES_API = "https://api.themoviedb.org/3/movie/popular";
 
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500/";
+
+export const LANGUAGE_PREFERENCE = [
+  {
+    identifier: "en",
+    name: "English",
+  },
+  {
+    identifier: "hindi",
+    name: "Hindi",
+  },
+  {
+    identifier: "spanish",
+    name: "Spanish",
+  },
+];

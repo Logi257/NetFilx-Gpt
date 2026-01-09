@@ -42,6 +42,3 @@
     - Title & Description
     - Movie Suggestions
       - MovieList \* N
-- NetfilxGpt
-  - Search Bar
-  - Movie Suggestion

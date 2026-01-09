@@ -11,7 +11,7 @@ const VideoTitle = ({ title, desc }) => {
           <FaPlay />
           Play
         </button>
-        <button className="bg-gray-400 bg-opacity-50 text-white p-2 px-5 text-lg rounded-lg bg-opacity-50 flex items-center gap-1 cursor-pointer">
+        <button className="bg-gray-500/50 text-white p-2 px-5 text-lg rounded-lg bg-opacity-50 flex items-center gap-1 cursor-pointer">
           <FaCircleInfo />
           More info
         </button>
