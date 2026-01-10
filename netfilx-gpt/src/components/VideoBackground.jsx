@@ -9,7 +9,7 @@ const VideoBackground = ({ movieId }) => {
   //const trailer = useSelector((store) => store.movies.trailerVideo);
 
   return (
-    <div className="w-screen">
+    <div className="">
       {/* <iframe
         src={
           "https://www.youtube.com/embed/TBCVOMLVgHY?si=" +
@@ -21,7 +21,7 @@ const VideoBackground = ({ movieId }) => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerPolicy="strict-origin-when-cross-origin"
       ></iframe> */}
-      <img src={IMG_CDN_URL + poster[0].backdrop_path} className="w-screen" />
+      <img src={IMG_CDN_URL + poster[0].backdrop_path} className="w-full object-cover" />
     </div>
   );
 };

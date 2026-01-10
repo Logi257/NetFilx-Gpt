@@ -19,17 +19,21 @@ const Header = () => {
   };
 
   return (
-    <div className="flex justify-between absolute w-screen px-8 py-2 z-10 bg-linear-to-b from-black">
-      <img src={LOGO} alt="logo" className="w-44 cursor-pointer" />
+    <div className="flex justify-between absolute w-full px-8 py-2 z-10 bg-linear-to-b from-black">
+      <img src={LOGO} alt="logo" className="w-25 md:w-44 cursor-pointer" />
 
       {user && (
         <div className="flex p-2 items-center gap-5">
           <h5 className="font-bold text-white">{user?.displayName}</h5>
 
           <div className="flex gap-1 cursor-pointer">
-            <img className="w-10 h-10 rounded-lg" src={PHOTO_URL} alt="" />
+            <img
+              className="hidden md:block w-5 h-5 md:w-10 md:h-10 rounded-lg"
+              src={PHOTO_URL}
+              alt=""
+            />
             <button
-              className="font-bold text-white cursor-pointer"
+              className="font-bold text-white cursor-pointer text-[13px] md:text-[18px]"
               onClick={handleSignOut}
             >
               Sign Out
